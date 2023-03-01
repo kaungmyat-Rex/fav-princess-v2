@@ -29,12 +29,13 @@ function App() {
   const [princessData, setprincessData] = useState([]);
   const [princessid, setprincessid] = useState(null);
   const [copy, setcopy] = useState(false);
+  const [loading, setloading] = useState(true);
   const userCollection = collection(db, "princess");
 
   useEffect(() => {
     const getprincess = async () => {
       const data = await getDocs(userCollection);
-
+      setloading(false);
       setprincessData(data.docs.map((e) => ({ ...e.data(), id: e.id })));
     };
     getprincess();
@@ -112,8 +113,32 @@ function App() {
         />
         <div className="home-border">
           <div className="actress-list">
-            {search === ""
-              ? princessData.map((e, index) => (
+            {loading ? (
+              <div style={{ padding: "150px 0px 50px 0px" }}>
+                <h4 style={{ color: "#eeeeee", fontSize: "2rem" }}>
+                  Loading...
+                </h4>
+              </div>
+            ) : search === "" ? (
+              princessData.map((e, index) => (
+                <div
+                  className="actress-main"
+                  key={e.id}
+                  onClick={() => openModelprincess(e.name, e.id)}
+                >
+                  <img src={e.imgLink} alt="" />
+                  <p>{e.name}</p>
+                  <p className="index">{index + 1}</p>
+                </div>
+              ))
+            ) : (
+              princessData
+                .filter((e) => {
+                  if (e.name.toLowerCase().includes(search.toLowerCase())) {
+                    return e;
+                  }
+                })
+                .map((e) => (
                   <div
                     className="actress-main"
                     key={e.id}
@@ -121,25 +146,9 @@ function App() {
                   >
                     <img src={e.imgLink} alt="" />
                     <p>{e.name}</p>
-                    <p className="index">{index + 1}</p>
                   </div>
                 ))
-              : princessData
-                  .filter((e) => {
-                    if (e.name.toLowerCase().includes(search.toLowerCase())) {
-                      return e;
-                    }
-                  })
-                  .map((e) => (
-                    <div
-                      className="actress-main"
-                      key={e.id}
-                      onClick={() => openModelprincess(e.name, e.id)}
-                    >
-                      <img src={e.imgLink} alt="" />
-                      <p>{e.name}</p>
-                    </div>
-                  ))}
+            )}
           </div>
         </div>
       </div>
