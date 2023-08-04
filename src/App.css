@@ -1,8 +1,10 @@
 .App {
   margin: 0px;
   padding: 0px;
-  background-color: #222831;
+  /* background-color: #222831; */
+  background-color: rgb(41, 30, 42);
   overflow-x: hidden;
+  position: relative;
 }
 
 .nav-section {
@@ -76,6 +78,13 @@
   margin: 3px;
   margin-top: 50px;
   position: relative;
+  cursor: pointer;
+}
+
+.actress-main:hover {
+  border-radius: 5px;
+  z-index: 1;
+  transition: 300ms;
 }
 
 .actress-main img {
@@ -98,8 +107,16 @@
   padding: 1px 7px 1px 7px;
   background-color: #494b4e;
   font-weight: 600;
+  border-top-right-radius: 6px;
 }
 
+.actress-main:hover {
+  .index {
+    padding: 5px 11px 5px 11px;
+    transition: 300ms;
+    border: 1px solid white;
+  }
+}
 .add-hide {
   display: none;
 }
@@ -246,11 +263,14 @@
   border-radius: 5px;
   font-weight: 600;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .pm-imglist {
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .pm-imglist img {
@@ -280,4 +300,11 @@
   border-radius: 10px;
   margin-left: 35px;
   cursor: pointer;
+}
+.footer-text {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
 }

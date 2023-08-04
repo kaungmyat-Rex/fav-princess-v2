@@ -1,10 +1,10 @@
 import React from "react";
 import javmost from "./img/javmost.jpg";
 import pornhub from "./img/Pornhub.png";
-import vlxx from "./img/vlxx.jpeg";
+import missAv from "./img/missAv.jpg";
 import xham from "./img/xHamster.png";
 import xvideo from "./img/XVideos.png";
-
+import SpankBang from "./img/SpankBang.jpg";
 const PrincessModel = ({
   pmodel,
   setpmodel,
@@ -29,31 +29,51 @@ const PrincessModel = ({
         <div className="pm-border">
           <div className="pm-main">
             <div className="pm-title">
-              <h4>Fap with {princessName}</h4>
+              <h4>{princessName}</h4>
               <p onClick={() => closemodel()}>Close</p>
             </div>
             <div className="pm-imglist">
-              <a href={`https://vlxx.sex/search/${princessName}/`}>
+              <a
+                href={`https://missav.com/en/search/${princessName}/`}
+                target="_blank"
+              >
                 {" "}
-                <img src={vlxx} alt="" />
+                <img src={missAv} alt="" />
               </a>
-              <a href={`https://www5.javmost.com/search/${princessName}/`}>
+              <a
+                href={`https://www5.javmost.com/search/${princessName}/`}
+                target="_blank"
+              >
                 <img src={javmost} alt="" />
               </a>
               <a
                 href={`https://www.pornhub.com/video/search?search=${princessName}`}
+                target="_blank"
               >
                 {" "}
                 <img src={pornhub} alt="" />
               </a>
 
-              <a href={`https://megaxh.com/search/${princessName}`}>
+              <a
+                href={`https://megaxh.com/search/${princessName}`}
+                target="_blank"
+              >
                 {" "}
                 <img src={xham} alt="" />
               </a>
-              <a href={`https://www.xvideos2.com/?k=${princessName}`}>
+              <a
+                href={`https://www.xvideos2.com/?k=${princessName}`}
+                target="_blank"
+              >
                 {" "}
                 <img src={xvideo} alt="" />
+              </a>
+              <a
+                href={`https://spankbang.com/s/${princessName}/`}
+                target="_blank"
+              >
+                {" "}
+                <img src={SpankBang} alt="" />
               </a>
             </div>
             <div className="pm-btn">

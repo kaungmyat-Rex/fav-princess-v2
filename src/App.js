@@ -153,14 +153,7 @@ function App() {
         </div>
       </div>
 
-      <p
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          color: "#7c838e",
-        }}
-      >
+      <p className="footer-text">
         @CopyRight to kaungmyat 2023 All Right Reserve
       </p>
     </div>
